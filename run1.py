@@ -29,8 +29,7 @@ if app_mode=='Home':
    
 elif app_mode =='Prediction':
     
-    #csv=pd.read_csv("informations.csv")
-    csv=pd.read_csv("C://Users//kevin//Documents//Streamlit assignment//train.csv")
+    csv=pd.read_csv("informations.csv")
     st.write(csv)
 
     #st.image('slider-short-3.jpg')
@@ -91,18 +90,18 @@ elif app_mode =='Prediction':
     single_sample = np.array(feature_list).reshape(1,-1)
 
     if st.button("Predict"):
-        file_ = open("C://Users//kevin//Documents//Streamlit assignment//6m-rain.gif", "rb")
+        file_ = open("6m-rain.gif", "rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
         file_.close()
    
-        file = open("C://Users//kevin//Documents//Streamlit assignment//green-cola-no.gif", "rb")
+        file = open("green-cola-no.gif", "rb")
         contents = file.read()
         data_url_no = base64.b64encode(contents).decode("utf-8")
         file.close()
    
    
-        loaded_model = pickle.load(open("C://Users//kevin//Documents//Streamlit assignment//RF.sav", 'rb'))
+        loaded_model = pickle.load(open("RF.sav", 'rb'))
         prediction = loaded_model.predict(single_sample)
         if prediction[0] == 0 :
             st.error(
