@@ -21,15 +21,14 @@ def get_value(val,my_dict):
 app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction'])
 if app_mode=='Home':
     st.title('LOAN PREDICTION :')
-   # st.image('loan_image.jpg') 
-    st.image("C://Users//kevin//Documents//Streamlit assignment//loan_image.jpg")
+    st.image('loan_image.jpg') 
     st.write('@DSU for learning purposes only') 
    
    
    
 elif app_mode =='Prediction':
     
-    csv=pd.read_csv("informations.csv")
+    csv=pd.read_csv("test.csv")
     st.write(csv)
 
     #st.image('slider-short-3.jpg')
