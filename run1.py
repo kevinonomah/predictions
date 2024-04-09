@@ -28,7 +28,7 @@ if app_mode=='Home':
    
 elif app_mode =='Prediction':
     
-    csv=pd.read_csv("test.csv")
+    csv=pd.read_csv("informations.csv")
     st.write(csv)
 
     #st.image('slider-short-3.jpg')
@@ -77,11 +77,11 @@ elif app_mode =='Prediction':
     'Education':Education,
     'ApplicantIncome':ApplicantIncome,
     'CoapplicantIncome':CoapplicantIncome,
-    'Self_Employed':Self_Employed,
+    'Self Employed':Self_Employed,
     'LoanAmount':LoanAmount,
     'Loan_Amount_Term':Loan_Amount_Term,
     'Credit_History':Credit_History,
-    'PropertyArea':[Rural,Urban,Semiurban],
+    'Property_Area':[Rural,Urban,Semiurban],
     }
 
     feature_list=[ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term,Credit_History,get_value(Gender,gender_dict),get_fvalue(Married),data1['Dependents'][0],data1['Dependents'][1],data1['Dependents'][2],data1['Dependents'][3],get_value(Education,edu),get_fvalue(Self_Employed),data1['Property_Area'][0],data1['Property_Area'][1],data1['Property_Area'][2]]
