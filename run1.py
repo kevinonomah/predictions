@@ -6,7 +6,6 @@ import base64
 
 
 
-@st.cache(suppress_st_warning=True)
 def get_fvalue(val):
     feature_dict = {"No":1,"Yes":2}
     for key,value in feature_dict.items():
@@ -20,7 +19,7 @@ def get_value(val,my_dict):
        
 app_mode = st.sidebar.selectbox('Select Page',['Home','Prediction'])
 if app_mode=='Home':
-    st.title('LOAN PREDICTION :')
+    st.title('Loan Prediction')
     st.image('loan_image.jpg') 
     st.write('@DSU for learning purposes only') 
    
@@ -33,8 +32,8 @@ elif app_mode =='Prediction':
 
     #st.image('slider-short-3.jpg')
 
-    st.subheader('Sir/Mme , YOU need to fill all neccesary informations in order to get a reply to your loan request !')
-    st.sidebar.header("Informations about the client :")
+    st.subheader('Fill in the applicant details in the sidebar, then press Predict to get a decision on the loan request.')
+    st.sidebar.header("Applicant information")
     gender_dict = {"Male":1,"Female":2}
     feature_dict = {"No":1,"Yes":2}
     edu={'Graduate':1,'Not Graduate':2}
@@ -107,14 +106,14 @@ elif app_mode =='Prediction':
     'According to our Calculations, you will not get the loan from Bank'
     )
             st.markdown(
-    f'<img src="data:image/gif;base64,{data_url_no}" alt="cat gif">',
+    f'<img src="data:image/gif;base64,{data_url_no}" alt="result animation">',
     unsafe_allow_html=True,)
         elif prediction[0] == 1 :
             st.success(
     'Congratulations!! you will get the loan from Bank'
     )
             st.markdown(
-    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
+    f'<img src="data:image/gif;base64,{data_url}" alt="result animation">',
     unsafe_allow_html=True,
     )
 
