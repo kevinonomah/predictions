@@ -2,7 +2,8 @@
 
 A Streamlit app that predicts whether a loan application will be approved,
 using a random forest trained on the classic loan-prediction dataset
-(614 labelled applications). Built for learning purposes at DSU.
+(614 labelled applications). Built for learning purposes during my M.S. in
+Analytics at Dakota State University (DSU).
 
 ## How it works
 
